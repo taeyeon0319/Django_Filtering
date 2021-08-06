@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+
+    <form method="get">
+        {{ filtered_persons.form.as_p }}
+        <input type="submit" value="Press"> 
+    </form>
+
+    {% for person in filtered_persons.qs %}
+        <h2>
+            {{ person.name }}
+            <br>
+            {{ person.gender }}
+            <br>
+            {{ person.age }}
+            <br>
+        </h2>
+    {% endfor %}
+</body>
+</html>
